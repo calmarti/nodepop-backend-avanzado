@@ -18,18 +18,13 @@ async function main() {
   mongoose.connection.close();
 }
 
-
-
 async function initUsers() {
   const deleted = await User.deleteMany();
   console.log(`Se han eliminado ${deleted.deletedCount} usuarios`);
   const users = await User.create([
     { email: "admin@example.com", password: await User.hashPassword("1234") },
   ]);
-  //   new User([{
-  //     email: 'admin@example.com',
-  //     password: await User.hashPassword("1234"),
-  //   }]).save();
+
 
   console.log(
     `La base de datos se ha inicializado con ${users.length} usuario`

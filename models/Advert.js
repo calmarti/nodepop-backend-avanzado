@@ -7,8 +7,8 @@ const advertSchema = mongoose.Schema({
     name: {type: String, required: true}, 
     sale: {type: Boolean, required: true},
     price: {type: Number, required:true, min: 1},  //además de número no negativo (validación con express-validator), debe ser igual o mayor a una unidad 
-    picture: {type: String},
-    tags: {type: [String]}   
+    tags: {type: [String]},   
+    picture: {type: String}
     
 });
   

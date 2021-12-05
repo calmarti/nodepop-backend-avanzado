@@ -43,7 +43,7 @@ const loginController = new LoginController()
 app.post("/apiv1/auth", loginController.auth);
 
 app.use("/apiv1/adverts", jwtAuth, require("./routes/apiv1/adverts")); //para búsquedas con o sin filtros
-app.use("/apiv1/adverts/new", jwtAuth, require("./routes/apiv1/new")); //para crear un nuevo documento
+app.use("/apiv1/adverts", jwtAuth, require("./routes/apiv1/new")); //para crear un nuevo documento
 app.use("/apiv1/adverts/tags", jwtAuth, require("./routes/apiv1/tags")); //para obtener la lista de las etiquetas
 
 //middleware de i18n

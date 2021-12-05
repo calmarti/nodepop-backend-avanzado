@@ -1,0 +1,39 @@
+Subida de imagen con tarea en backgroundEl API necesita un end-point para crear anuncios. 
+
+Podría ser tal que POST /api/anuncios y debería permitir que el cliente del API suba una imagen y esta sea guardada en el servidor,
+de tal forma que cuando hagamos las peticiones GET /api/anuncios nos sean devueltas las rutas a éstas imágenes y dichas rutas funcionen.
+
+Cada imagen que se suba debe tener un thumbnail!
+
+Podemos hacer un microservicio que reciba trabajos (con cote.js o de una cola deRabbitMQ), creando dichos thumbnails.
+
+Para crear un thumbnail podemos:
+
+    - buscar node.js image resize en google y ver cual probáis, por ejemplo jimp
+    - instalarla y probarla
+    - hacer que el API mande un mensaje (con cote.js o con una cola de RabbitMQ) con la ruta del filesystem a la imágen.
+    - crear un worker que esté suscrito al mensaje/cola y vaya haciendo thumbnails de cada imágen a un tamaño de 100x100 píxeles.
+
+Ejemplo de la llamada de prueba en Postman (fijaros que el tipo del campo ‘foto’ en lapetición es ‘File’)
+
+
+0. Crear un 'type' de tipo 'file' al campo 'foto' en el adverstSchema
+
+librerías body-parser,  multer
+
+1. POST api/adverts/new, campo 'foto' (form-data): ¿donde guardo la foto? ¿en una carpeta en el filesystem local o en la bd?
+
+2. ¿cuando manda el API el mensaje 'convertir foto en thumbnail' (pasando la ruta al filesystem)?, ¿tras recibir los
+datos del POST (req.body) y justo antes de persisitir la nueva ruta al thumbnail en la bd?
+
+
+-declarar el ms
+-almacen del ms (bd propia de mongo, si hace falta, sino variables)
+-lógica del ms
+-calcular resultado
+
+
+OJO: ARREGLAR LA NOMENCLATURA DEL API: EJ. EN VEZ DE /apiv1/adverts/new,  POST apiv1/adverts 
+
+
+

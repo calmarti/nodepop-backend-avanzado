@@ -1,6 +1,7 @@
 //const { User } = require("../models");
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
+const { now } = require("mongoose");
 
 //¿si tiene un sólo método no podríamos reeemplazar la clase por una función?
 
@@ -12,11 +13,10 @@ class LoginController {
       const user = await User.findOne({ email });
       //console.log(user)
       if (!user || !(await user.comparePasswords(password))) {
-        //ERROR: user.comparePasswords is not a function
-        res.status(401).json({ Error: "Wrong email or password" })
+        res.status(401).json({ Error: "Wrong email or password" });
         return;
       }
-      //si valida crear un token con el id del usuario y devolverlo
+
       jwt.sign(
         { _id: user._id },
         process.env.JWT_SECRET,
@@ -42,4 +42,4 @@ module.exports = LoginController;
 //2.GET /api/anuncios incluyendo el JWT en una cabecera o query-string hará la peticióncorrecta (200 OK)
 //3.GET /api/anuncios sin token responderá con un código de status HTTP 401 y un json con info del error
 //4.GET /api/anuncios con un token caducado responderá con un código de status HTTP 401 y un json con info del error
-//El API tendrá al menos un usuario con email: user@example.comy clav
+//El API tendrá al menos un usuario con email: user@example.com y clave 1234
