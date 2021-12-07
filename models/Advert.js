@@ -13,6 +13,7 @@ const advertSchema = mongoose.Schema({
 });
   
 
+
 advertSchema.statics.customFind = function(filter, skip, limit, sort, select){
     
     const query = Advert.find(filter);

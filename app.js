@@ -6,21 +6,17 @@ var logger = require("morgan");
 
 var app = express();
 
-
 require("./lib/connectMongoose");
 const { isApiRequest } = require("./lib/utils");
-const LoginController = require('./controllers/loginController');
 
+//carga del controlador de autenticación en el API
+const LoginController = require("./controllers/loginController");
 
 //set up del módulo de internacionalización y localización
 const i18n = require("./lib/i18nConfig");
 
+//middleware de validación del JWT
 const jwtAuth = require("./lib/jwtAuthMiddleware");
-
-
-//prueba de i18n
-//i18n.setLocale("es");
-// console.log(i18n.__("Welcome to Nodefoo"));
 
 // configuración de las vistas
 app.set("views", path.join(__dirname, "views"));
@@ -34,24 +30,23 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+//intanciación del controlador de autenticación en el API
+const loginController = new LoginController();
 
-const loginController = new LoginController()
 
-
-//endpoints de la API
-
-app.post("/apiv1/auth", loginController.auth);
-
-app.use("/apiv1/adverts", jwtAuth, require("./routes/apiv1/adverts")); //para búsquedas con o sin filtros
-app.use("/apiv1/adverts", jwtAuth, require("./routes/apiv1/new")); //para crear un nuevo documento
-app.use("/apiv1/adverts/tags", jwtAuth, require("./routes/apiv1/tags")); //para obtener la lista de las etiquetas
-
-//middleware de i18n
+//middleware de internacionalización y localización (i18n)
 app.use(i18n.init);
 
 //rutas de front-end
 app.use("/change-locale", require("./routes/change-locale"));
 app.use("/", require("./routes/index"));
+
+//endpoints de la API
+app.post("/apiv1/auth", loginController.auth);
+app.use("/apiv1/adverts", jwtAuth, require("./routes/apiv1/adverts"));     //GET /apiv1/adverts
+app.use("/apiv1/adverts", jwtAuth, require("./routes/apiv1/newAdvert"));         //POST /apiv1/adverts
+app.use("/apiv1/adverts/tags", jwtAuth, require("./routes/apiv1/tags"));   //GET /apiv1/adverts/tags
+
 
 // middleware que captura errores 404 y lo pasa al gestor de errores
 app.use(function (req, res, next) {
@@ -74,4 +69,3 @@ app.use(function (err, req, res, next) {
 });
 
 module.exports = app;
-

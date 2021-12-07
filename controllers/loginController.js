@@ -1,7 +1,7 @@
 //const { User } = require("../models");
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
-const { now } = require("mongoose");
+
 
 //¿si tiene un sólo método no podríamos reeemplazar la clase por una función?
 
@@ -30,16 +30,10 @@ class LoginController {
         }
       );
     } catch (err) {
-      next(err); //next()
+      next(err); 
     }
   }
 }
 
 module.exports = LoginController;
 
-//Mini-guia:
-//1.POST /api/authenticate para hacer login y devolver un token JWT
-//2.GET /api/anuncios incluyendo el JWT en una cabecera o query-string hará la peticióncorrecta (200 OK)
-//3.GET /api/anuncios sin token responderá con un código de status HTTP 401 y un json con info del error
-//4.GET /api/anuncios con un token caducado responderá con un código de status HTTP 401 y un json con info del error
-//El API tendrá al menos un usuario con email: user@example.com y clave 1234

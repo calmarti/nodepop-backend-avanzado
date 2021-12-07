@@ -1,4 +1,4 @@
-## API para el servicio de venta de artículos de segunda mano 'Nodepop'
+## API de 'Nodepop'
 ---
 
 ## Requisitos de software
