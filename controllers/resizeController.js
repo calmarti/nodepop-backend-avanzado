@@ -5,7 +5,6 @@ const requester = new Requester({ name: "resize-image-service" });
 
 class ResizeController {
   index(req, res, next) {
-    console.log("desde el controller:", req.file);
     requester.send(
       {
         type: "resize-image",

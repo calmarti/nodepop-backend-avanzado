@@ -1,12 +1,11 @@
 'use strict';
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
 
-const Advert = require('../../models/Advert');
-const { nameFilter, priceRangeFilter } = require('../../lib/utils');
+const Advert = require('../models/Advert');
+const { nameFilter, priceRangeFilter } = require('../lib/utils');
 
-//Primer endpoint: lista total y búsquedas con filtros con 'query-strings' 
-
+//Interfaz frontend tipo 'demo' de los endopoints (1) y (2) del API
 
 router.get('/', async function (req, res, next) {
 
@@ -26,14 +25,17 @@ router.get('/', async function (req, res, next) {
         if (tags) filter.tags = tags;
 
         const name = req.query.name;
-        nameFilter(name, filter);       //filtro auxiliar por primeras letras del nombre
+        nameFilter(name, filter);
 
         const price = req.query.price;
-        priceRangeFilter(price, filter); //filtro auxiliar para el rango de precios
+        priceRangeFilter(price, filter);
+
 
         const adverts = await Advert.customFind(filter, skip, limit, sort, select);
 
-        res.json({ result: adverts });
+        res.locals.adverts = adverts;
+
+        res.render('demo', { title: 'Nodepop' });
     }
     catch (err) {
         next(err);
@@ -41,4 +43,6 @@ router.get('/', async function (req, res, next) {
 });
 
 
+
 module.exports = router;
+

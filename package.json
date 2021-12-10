@@ -5,7 +5,8 @@
   "scripts": {
     "initdb": "node initdb.js",
     "start": "node ./bin/www",
-    "dev": "cross-env DEBUG=nodepop:* nodemon"
+    "dev": "cross-env DEBUG=nodepop:* nodemon",
+    "test:int": "jest --detectOpenHandles integration"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -27,6 +28,8 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "nodemon": "^2.0.12"
+    "jest": "^27.4.3",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.6"
   }
 }

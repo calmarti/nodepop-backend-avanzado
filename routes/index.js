@@ -1,47 +1,21 @@
 'use strict';
-var express = require('express');
-var router = express.Router();
 
-const Advert = require('../models/Advert');
-const { nameFilter, priceRangeFilter } = require('../lib/utils');
+const router = require('express').Router();
+const fs = require('fs');
+const path = require('path');
 
+
+//Home que renderiza la documentación usando strapdown.js
+//Contiene enlace a la ruta demo
 
 router.get('/', async function (req, res, next) {
-
-    try {
-
-        const skip = parseInt(req.query.skip);
-        const limit = parseInt(req.query.limit);
-        const sort = req.query.sort;
-        const select = req.query.select;
-
-        const filter = {};
-
-        const sale = req.query.sale;
-        if (sale) filter.sale = sale;
-
-        const tags = req.query.tags;
-        if (tags) filter.tags = tags;
-
-        const name = req.query.name;
-        nameFilter(name, filter);
-
-        const price = req.query.price;
-        priceRangeFilter(price, filter);
-
-
-        const adverts = await Advert.customFind(filter, skip, limit, sort, select);
-
-        res.locals.adverts = adverts;
-
-        res.render('index', { title: 'Nodepop' });
-    }
-    catch (err) {
-        next(err);
-    }
+  try {
+    const filename = path.join(__dirname, '../README.md');
+    const readme = await new Promise((res, rej) => 
+      fs.readFile(filename, 'utf8', (err, data) => err ? rej(err) : res(data) )
+    );
+    res.render('index', {title: 'Nodepop', readme });
+  } catch (err) { return next(err); }
 });
 
-
-
 module.exports = router;
-

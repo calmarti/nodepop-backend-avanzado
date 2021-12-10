@@ -4,7 +4,16 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
+
+//OJO: cambiar dirección del REPO en el README!!!!
+//TODO muestra de 5 adverts no de 20!!! (subir las fotos con el ms)
+//TODO limpieza de código (segunda vuelta)
+//TODO arreglar cierre de conexión al inicializar bd 
+
+
 var app = express();
+
+// app.locals.title = 'Nodepop'
 
 require("./lib/connectMongoose");
 const { isApiRequest } = require("./lib/utils");
@@ -39,6 +48,7 @@ app.use(i18n.init);
 
 //rutas de front-end
 app.use("/change-locale", require("./routes/change-locale"));
+app.use("/demo", require("./routes/demo"));
 app.use("/", require("./routes/index"));
 
 //endpoints de la API

@@ -1,108 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Nodepop</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="/stylesheets/styles.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="d-flex" id="wrapper">
-            <!-- Sidebar-->
-            <div class="border-end bg-white" id="sidebar-wrapper">
-                <div class="sidebar-heading border-bottom bg-light">Nodepop Icon</div>
-                <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
-                </div>
-            </div>
-            <!-- Page content wrapper-->
-            <div id="page-content-wrapper">
-                <!-- Top navigation-->
-                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                    <div class="container-fluid">
-                        <button class="btn btn-primary" id="sidebarToggle">Opciones de búsqueda</button>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                                <% getLocales().forEach(locale => { %> 
-                                    <li class="nav-item"><a class="nav-link" href="/change-locale/<%= locale %>" > <%= locale.toUpperCase() %></a></li>
-                                    <% }) %>
-                               
-                                <!-- <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="#!">Action</a>
-                                        <a class="dropdown-item" href="#!">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#!">Something else here</a>
-                                    </div>
-                                </li> -->
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-                <!-- Page content-->
-                <div class="container-fluid">
-                    <h1 class="mt-4"><%= title %></h1>
-                    <p>  <%= __('Welcome to') %> <%= title %>  </p>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Nodepop</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
-                    <main>
-                        <div>
-                          <h2><%= __('List of adverts') %> </h2>
-                    
-                          <table>
-                            <tr>
-                              <th> <%=__('Name') %> </th>
-                              <th> <%=__('Price') %> </th>
-                              <th> <%=__('Sale/Buy') %> </th>
-                              <th> <%=__('Tags') %> </th>     
-                              <th> <%=__('Image') %> </th>
-                            </tr>
-                            <% adverts.forEach((advert)=> { %>
-                              <tr>
-                                <td>
-                                  <%= advert.name %>
-                                </td>
-                                <td>
-                                  <%= advert.price %>
-                                </td>
-                                <td>
-                                  <% if(advert.sale==true) { %>
-                                    Venta
-                                    <% } else if (advert.sale===false) { %>
-                                      Compra
-                                      <% } %>
-                                </td>
-                                <td>
-                                  <%= advert.tags %>
-                                </td>
-                                <td>
-                                  <a href = <%=advert.picture %> > <%= advert.picture %> </a>
-                                </td>
-                              </tr>
-                             <% }) %>
-                        </table>
-                      
-                        </div>
-                      </main>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/stylesheets/header.css" rel="stylesheet" />
+  </head>
 
+  <body>
+    <!-- Top navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <span class="navbar-brand" href="#">Nodepop</span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarColor02"
+          aria-controls="navbarColor02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-                </div>
-            </div>
-        </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#"
+              >
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item lang-item">
+            <a class="nav-link" href="demo">Demo</a>
+          </li>
+          <% getLocales().reverse().forEach(locale => { %>
+          <div class="lang-list">
+            <li class="nav-item lang-item">
+              <a class="nav-link" href="/change-locale/<%= locale %>">
+                <%= locale.toUpperCase() %></a
+              >
+            </li>
+            <% }) %>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <ul></ul>
+
+    <!-- Page content-->
+    <div class="container-fluid">
+      <h1 class="title mt-4"><%= __('Welcome to') %> <%= title %></h1>
+    </div>
+
+    <xmp theme="simplex" style="display: none"
+>
+      <%- readme %>
+    </xmp>
+    <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+  </body>
 </html>
