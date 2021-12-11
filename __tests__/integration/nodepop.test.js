@@ -6,13 +6,11 @@ const app = require("../../app");
 describe("API auth endpoint", () => {
   describe("POST /apiv1/auth", () => {
     it("should return '401' if either the email or password are wrong", (done) => {
-      // const email = "user@example.com";
-      // const password = "abcd";
       request(app)
         .post("/apiv1/auth")
         .expect(401)
         .then((res) => {
-          expect(res.body.email).not.toBe("admin@user.com");
+          expect(res.body.email).not.toBe("admin@example.com");
           done();
         });
     });

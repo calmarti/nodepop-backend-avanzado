@@ -5,7 +5,7 @@ var router = express.Router();
 const Advert = require('../models/Advert');
 const { nameFilter, priceRangeFilter } = require('../lib/utils');
 
-//Interfaz frontend tipo 'demo' de los endopoints (1) y (2) del API
+//Interfaz frontend tipo 'demo' del endpoint GET /apiv1/adverts del API
 
 router.get('/', async function (req, res, next) {
 

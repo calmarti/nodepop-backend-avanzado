@@ -5,7 +5,7 @@ const router = express.Router();
 const Advert = require('../../models/Advert');
 const { nameFilter, priceRangeFilter } = require('../../lib/utils');
 
-//Primer endpoint: lista total y búsquedas con filtros con 'query-strings' 
+//Primer endpoint: lista total y búsquedas con filtros 
 
 
 router.get('/', async function (req, res, next) {

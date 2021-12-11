@@ -5,19 +5,13 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
 
-//TODO cambiar dirección del REPO en el README!!!!
-//TODO limpieza de código (segunda vuelta)
-
-
-
 var app = express();
 
-// app.locals.title = 'Nodepop'
 
 require("./lib/connectMongoose");
 const { isApiRequest } = require("./lib/utils");
 
-//carga del controlador de autenticación en el API
+//carga del controlador de autenticación del API
 const LoginController = require("./controllers/loginController");
 
 //set up del módulo de internacionalización y localización

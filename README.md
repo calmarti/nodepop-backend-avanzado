@@ -192,6 +192,8 @@ Test del endpoint GET /apiv1/auth con Supertest y jest.
 ```
 npm run test:inv
 ```
+El test pasa los dos casos de prueba implementados (estatus 401 y estatus 200), pero fue posible lograr que Jest cerrara correctamente.
+
 ---
 ## Frontend de nodepop (internacionalizado)
 

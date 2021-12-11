@@ -6,8 +6,7 @@ const responder = new Responder({ name: "resize-image-service" });
 
 responder.on("resize-image", async (req, done) => {
   const { path } = req;
-  // console.log("desde el worker:", path);
-
+ 
   async function main() {
     try {
       const image = await jimp.read(path);
