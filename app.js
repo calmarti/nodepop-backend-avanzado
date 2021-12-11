@@ -11,6 +11,7 @@ var logger = require("morgan");
 //TODO limpieza de código (segunda vuelta)
 
 
+
 var app = express();
 
 // app.locals.title = 'Nodepop'
@@ -54,7 +55,7 @@ app.use("/", require("./routes/index"));
 //endpoints de la API
 app.post("/apiv1/auth", loginController.auth);
 app.use("/apiv1/adverts", jwtAuth, require("./routes/apiv1/adverts"));     //GET /apiv1/adverts
-app.use("/apiv1/adverts", jwtAuth, require("./routes/apiv1/newAdvert"));         //POST /apiv1/adverts
+app.use("/apiv1/adverts", jwtAuth, require("./routes/apiv1/newAdvert"));   //POST /apiv1/adverts
 app.use("/apiv1/adverts/tags", jwtAuth, require("./routes/apiv1/tags"));   //GET /apiv1/adverts/tags
 
 

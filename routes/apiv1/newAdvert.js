@@ -7,7 +7,8 @@ const cote = require("cote");
 const upload = require("../../lib/multerSetup");
 const ResizeController = require("../../controllers/resizeController");
 const resizeController = new ResizeController();
-require("../../lib/resizeImageService"); //servicio de resizing en modo 'listening'
+require("../../microservices/resizeImageService"); //carga del servicio de resizing en modo 'listening'
+
 //segundo endpoint: creación de un documento nuevo
 
 router.post(
