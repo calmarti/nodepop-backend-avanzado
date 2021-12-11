@@ -164,6 +164,8 @@ Campos del anuncio:
  
 (los *types* deben coincidir con los definidos en el *schema*) 
 
+Nota: el campo **picture** debe ser de tipo **file**
+
 ---
 
 
@@ -191,11 +193,11 @@ http://127.0.0.1:3000/apiv1/adverts/tags
 
 ## Test de integración
 
-Test del endpoint GET /apiv1/auth con Supertest y jest.
+Test del endpoint GET /apiv1/auth con Supertest y Jest.
 ```
 npm run test:inv
 ```
-El test pasa los dos casos de prueba implementados (estatus 401 y estatus 200), pero fue posible lograr que Jest cerrara correctamente.
+El test pasa los dos casos de prueba implementados (estatus 401 y estatus 200), pero no fue posible lograr que Jest cerrara correctamente.
 
 ---
 ## Frontend de nodepop (internacionalizado)
