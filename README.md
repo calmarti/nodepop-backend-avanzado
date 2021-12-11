@@ -149,15 +149,6 @@ Ordenación descendente: `sort = -campo`
 
 ---
 
-### GET /apiv1/adverts/tags
-
-Para obtener la lista de tags o categorías:
-
-```sh
-http://127.0.0.1:3000/apiv1/adverts/tags
-```
-
----
 
 ### POST /apiv1/adverts
 Para crear un nuevo anuncio (formato multipart/form-data)
@@ -185,6 +176,18 @@ El servicio se activa y **permanece en modo 'listening'** al arrancar la aplicac
 La **ejecución** del servicio se produce al subir una foto como parte de la creación de un anuncio. 
 
 ---
+
+
+### GET /apiv1/adverts/tags
+
+Para obtener la lista de tags o categorías:
+
+```sh
+http://127.0.0.1:3000/apiv1/adverts/tags
+```
+
+---
+
 
 ## Test de integración
 
