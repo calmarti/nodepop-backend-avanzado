@@ -6,8 +6,6 @@ var logger = require("morgan");
 
 
 //TODO cambiar dirección del REPO en el README!!!!
-//TODO verificar de nuevo que tanto frontend como endpoints del API funcionan, especialmente el POST /apiv1/adverts 
-//TODO darle una vuelta a los logs del microservicio (usar y luego limpiar console.logs)
 //TODO limpieza de código (segunda vuelta)
 
 

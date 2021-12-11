@@ -1,7 +1,7 @@
 "use strict";
 
 const { Requester } = require("cote");
-const requester = new Requester({ name: "resize-image-service" });
+const requester = new Requester({ name: "resize-image-controller" });
 
 class ResizeController {
   index(req, res, next) {

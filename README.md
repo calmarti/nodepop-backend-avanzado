@@ -15,7 +15,7 @@ Se asume la previa instalación de:
 
 ## Instalación
 Clonar el repo:
- <pre>git clone https://github.com/calmarti/practicaIntroToBackEnd.git</pre> 
+ <pre>git clone https://github.com/calmarti/NodepopAvanzado.git</pre> 
  
  Instalar las dependencias: 
 ```sh 
