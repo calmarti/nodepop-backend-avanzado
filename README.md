@@ -24,7 +24,7 @@ npm install
 ---
 ## Inicialización de la base de datos
 
-Los ficheros `initdb.js` y `advertSample.json` (muestra de 20 anuncios) permiten incializar la base de datos:
+Los ficheros `initdb.js` y `advertSample.json` (muestra de 6 anuncios) permiten incializar la base de datos:
 
 ```sh 
 npm run initdb
@@ -74,12 +74,13 @@ npm run dev
 
 ---
  ### Autenticación
-El endpoint de autenticación devuelve un JWT token de 1 hora de duración
+El endpoint de autenticación devuelve un JWT token de 2 horas de duración
 ```sh
 http://127.0.0.1:3000/apiv1/auth
 
 ```
-Para acceder a cualquier endpoint es necesario enviar el token JWT en la cabecera 'Authentication', en el body o como un query string en la URL.
+
+Para acceder a cualquier endpoint es necesario enviar el token JWT en la cabecera 'Authentication' o en el body de la peticion POST.
 
 ---
 ### GET /apiv1/adverts

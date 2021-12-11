@@ -4,7 +4,7 @@
             "name": "Iphone X",
             "sale": true,
             "price": 250,
-            "picture": "/images/iphone_x.png",
+            "picture": "/images/picture-iphone_x163918210944656.jpg",
             "tags": [
                 "mobile",
                 "lifestyle"
@@ -14,73 +14,16 @@
             "name": "Corbata Versace",
             "sale": false,
             "price": 180,
-            "picture": "/images/corbata.png",
+            "picture": "/images/picture-corbata163918218238311.jpg",
             "tags": [
                 "work"
-            ]
-        },
-        {
-            "name": "Cartera Gucci",
-            "sale": false,
-            "price": 212,
-            "picture": "/images/cartera.jpg",
-            "tags": [
-                "work"
-            ]
-        },
-        {
-            "name": "Galaxy S21+",
-            "sale": true,
-            "price": 485,
-            "picture": "/images/galaxy_s21.png",
-            "tags": [
-                "mobile",
-                "lifestyle"
-            ]
-        },
-        {
-            "name": "Xiaomi Mi 11",
-            "sale": true,
-            "price": 455,
-            "picture": "/images/xiaomi_mi_11.jpg",
-            "tags": [
-                "mobile",
-                "lifestyle"
-            ]
-        },
-        {
-            "name": "Tesla S 2016",
-            "sale": false,
-            "price": 39600,
-            "picture": "/images/tesla_s_2018.png",
-            "tags": [
-                "motor",
-                "lifestyle"
             ]
         },
         {
             "name": "Guitarra Alhambra",
             "sale": true,
             "price": 330,
-            "picture": "images/alhambra.png",
-            "tags": [
-                "lifestyle"
-            ]
-        },
-        {
-            "name": "Maletín Louis Vouton",
-            "sale": false,
-            "price": 749,
-            "picture": "/images/maletin.png",
-            "tags": [
-                "work"
-            ]
-        },
-        {
-            "name": "Raqueta de tennis Wilson",
-            "sale": true,
-            "price": 48,
-            "picture": "/images/raqueta.png",
+            "picture": "/images/picture-alhambra163918195124922.jpg",
             "tags": [
                 "lifestyle"
             ]
@@ -89,52 +32,16 @@
             "name": "Camiseta Adidas",
             "sale": true,
             "price": 21,
-            "picture": "/images/camiseta_adidas.png",
+            "picture": "/images/picture-camiseta_adidas163918204125391.jpg",
             "tags": [
                 "lifestyle"
-            ]
-        },
-        {
-            "name": "PlayStation 5",
-            "sale": false,
-            "price": 290,
-            "picture": "/images/playStation_5.png",
-            "tags": [
-                "lifestyle"
-            ]
-        },
-        {
-            "name": "XBox 360",
-            "sale": true,
-            "price": 278,
-            "picture": "/images/Xbox_360.png",
-            "tags": [
-                "lifestyle"
-            ]
-        },
-        {
-            "name": "Yamaha YZF-R7",
-            "sale": true,
-            "price": 2799,
-            "picture": "/images/Yamaha_YZF_R7.png",
-            "tags": [
-                "motor"
             ]
         },
         {
             "name": "Audi A4",
             "sale": false,
             "price": 17650,
-            "picture": "/images/Audi_A4.png",
-            "tags": [
-                "motor"
-            ]
-        },
-        {
-            "name": "Seat Leon 2017",
-            "sale": false,
-            "price": 9120,
-            "picture": "/images/Seat_Leon.png",
+            "picture": "/images/picture-Audi_A4163918200427079.jpg",
             "tags": [
                 "motor"
             ]
@@ -143,45 +50,7 @@
             "name": "MacBook Pro",
             "sale": true,
             "price": 689,
-            "picture": "/images/macbook.png",
-            "tags": [
-                "work",
-                "lifestyle"
-            ]
-        },
-        {
-            "name": "HP Pavillion",
-            "sale": true,
-            "price": 389,
-            "picture": "/images/hp_pavillion.png",
-            "tags": [
-                "work"
-            ]
-        },
-        {
-            "name": "Ferrari Testarossa",
-            "sale": true,
-            "price": 76280,
-            "picture": "/images/testarossa.png",
-            "tags": [
-                "motor",
-                "lifestyle"
-            ]
-        },
-        {
-            "name": "Aspiradora LG",
-            "sale": true,
-            "price": 99,
-            "picture": "/images/aspiradora_lg.png",
-            "tags": [
-                "work"
-            ]
-        },
-        {
-            "name": "Ipad Pro",
-            "sale": true,
-            "price": 390,
-            "picture": "/images/ipad_pro.png",
+            "picture": "/images/picture-macbook163918208302875.jpg",
             "tags": [
                 "work",
                 "lifestyle"

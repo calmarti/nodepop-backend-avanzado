@@ -5,10 +5,10 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
 
-//OJO: cambiar dirección del REPO en el README!!!!
-//TODO muestra de 5 adverts no de 20!!! (subir las fotos con el ms)
+//TODO cambiar dirección del REPO en el README!!!!
+//TODO verificar de nuevo que tanto frontend como endpoints del API funcionan, especialmente el POST /apiv1/adverts 
+//TODO darle una vuelta a los logs del microservicio (usar y luego limpiar console.logs)
 //TODO limpieza de código (segunda vuelta)
-//TODO arreglar cierre de conexión al inicializar bd 
 
 
 var app = express();
