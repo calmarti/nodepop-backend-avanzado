@@ -2,7 +2,7 @@
 ## Nodepop - Documentación del API
 ---
 
-Puedes ver una demo <a href="/demo">aquí</a>
+<!--Puedes ver una demo <a href="/demo">aquí</a> -->
 
 ## Requisitos de software
 
